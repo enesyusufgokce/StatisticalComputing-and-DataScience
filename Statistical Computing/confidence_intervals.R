@@ -11,7 +11,7 @@ colnames(birthwt) <- c("birthwt.below.2500", "mother.age", "mother.weight", "rac
 colnames(birthwt)
 
 # transform variables to factors with descriptive levels
-# (factor, categorical variable'lar?? depolamak i??in kullan??lan bir veri yap??s??d??r.)
+# (factor, categorical variable'ları depolamak için kullanılan bir veri yapısıdır.)
 birthwt$race
 birthwt$mother.smokes
 birthwt$hypertension
@@ -22,9 +22,9 @@ birthwt <- transform(birthwt,
                      hypertension = as.factor(mapvalues(hypertension, c(0,1), c("no", "yes"))),
                      uterine.irr = as.factor(mapvalues(uterine.irr, c(0,1), c("no", "yes")))
                      )
-class(typeof(birthwt$hypertension)) # factor ler, arka planda bellek tasarrufu i??in integer olarak saklan??r
-# ve her say??ya bir label atan??r. o y??zden direkt typeof diyince integer dedi. ama class(typeof()blabla)) dersek
-# o zaman nesnenin kullan??m amac??n??, yani "factor" oldu??unu s??yler
+class(typeof(birthwt$hypertension)) # factor ler, arka planda bellek tasarrufu için integer olarak saklanır
+# ve her sayıya bir label atanır. o yüzden direkt typeof diyince integer dedi. ama class(typeof()blabla)) dersek
+# o zaman nesnenin kullanım amacını, yani "factor" olduğunu söyler
 
 
 # TESTING DIFFERENCES IN MEANS
@@ -63,10 +63,10 @@ norm.interval = function(data, variance, conf.level = 0.95){
 }
 birthwt.var <- 800^2
 norm.interval(birthwt$birthwt.grams, birthwt.var)
-# not: if population sd is given, you use z. instead of t   burdan anlad??k it is known:  birthwt.var <- 800^2
+# not: if population sd is given, you use z. instead of t   burdan anladık it is known:  birthwt.var <- 800^2
 
 # -----sd is not known-----
-birthwt.CI <- t.test(birthwt$birthwt.grams)$conf.int # t testinden bir??ok sonu?? ????k??yor ve onlardan conf.int i al??yoz
+birthwt.CI <- t.test(birthwt$birthwt.grams)$conf.int # t testinden birçok sonuç çıkıyor ve onlardan conf.int i alıyoz
 birthwt.CI  # if we  know the sd, (population sd) then we use z test instead of t
 
 birthwt.CI <- t.test(birthwt$birthwt.grams, conf.level = 0.9)$conf.int
