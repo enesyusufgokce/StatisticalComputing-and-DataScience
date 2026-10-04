@@ -66,16 +66,16 @@ typeof(x) # integer
 class(x) # integer dedi
 
 dim(x) <- c(2,5) # two lines with five columns
-# ba??lang????ta x, sadece 1 den 10 a kadar bir say?? dizisiydi. dim(x) <- c(2,5) dedi??imizde R'a:
-# "Hey R! Bu 10 tane say??y?? al, onlar?? 2 sat??r ve 5 s??tun olacak ??ekilde bir kutuya (matrise) yerle??tir," diyoruz
-class(x) # dim den sonra art??k matris oldu x
-# R dilinde her matris asl??nda bir array'dir, ama her array bir matris de??ildir
+# başlangıçta x, sadece 1 den 10 a kadar bir sayı dizisiydi. dim(x) <- c(2,5) dediğimizde R'a:
+# "Bu 10 tane sayıyı al, onları 2 satır ve 5 sütun olacak şekilde bir kutuya (matrise) yerleştir," diyoruz
+class(x) # dim den sonra artık matris oldu x
+# R dilinde her matris aslında bir array'dir, ama her array bir matris değildir
 
 y <- c("hello", "world", "!")  # character vector
 z <- c(TRUE, TRUE, FALSE, TRUE, FALSE, FALSE, TRUE)
 dim(z) <- c(1, 7)
 
-t <- list("R", 12345, FALSE) # CAN CONTA??N DIFFERENT TYPES OF VALUES
+t <- list("R", 12345, FALSE) # CAN CONTAIN DIFFERENT TYPES OF VALUES
 typeof(t) # list
 
 students <- c("yusuf", "gokce", "aysel", "enise")
