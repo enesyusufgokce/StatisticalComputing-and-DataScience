@@ -83,21 +83,20 @@ calculateLetterGrade <- function(x){
   }
 }
 
-# note: c means "combine" Parantez i??indeki de??erleri (say??lar, metinler vb.) al??p tek bir 
-# vekt??r (veya liste) haline getirir.
-# sayilar <- c(1, 5, 8, 10)
-# ????kt??: [1]  1  5  8 10
-# isimler <- c("Ali", "Ay??e", "Fatma")
-# ????kt??: [1] "Ali"   "Ay??e"  "Fatma"
+# note: c means "combine" Parantez içindeki değerleri (sayılar, metinler vb.) alıp tek bir 
+# vektör (veya liste) haline getirir.
+# sayılar <- c(1, 5, 8, 10)
+# output: [1]  1  5  8 10
+# isimler <- c("Ali", "Ayşe", "Fatma")
+# output: [1] "Ali"   "Ayşe"  "Fatma"
 
 course.grades <- c(92, 88, 84, 75, 91)
 course.grades
-sapply(course.grades, FUN=calculateLetterGrade)  # sapply bir liste veya vekt??r ??zerindeki her ????eye bir
-# fonksiyon uygulayan ve sonucu m??mk??nse basitle??tirerek (vekt??r veya matris olarak) d??nd??ren 
-# lapply'??n "basitle??tirilmi??" (simplified) bir versiyonudur.
+sapply(course.grades, FUN=calculateLetterGrade)  # sapply bir liste veya vektör üzerindeki her öğeye bir
+# fonksiyon uygulayan ve sonucu mümkünse basitleştirerek (vektör veya matris olarak) döndüren 
+# lapply'ın simplified bir versiyonudur.
 
 addOne <- function(x){
   return(x+1)
 }
 addOne(15)
-
