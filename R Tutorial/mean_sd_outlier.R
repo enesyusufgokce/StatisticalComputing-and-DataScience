@@ -60,7 +60,7 @@ patient_data
 patient_data$Gender[patient_data$Gender == "female"] <- "Female"
 patient_data
 patient_data$Gender
-## patient_indicator_matrix$Gender diyemezsin. bu $ i??aretini data framelerde kullanabilirsin
+## patient_indicator_matrix$Gender diyemem. bu $ işaretini data framelerde kullanabilirim
 
 str(patient_data)
 
@@ -91,9 +91,9 @@ str(patient_data_new)
 getwd()
 # I dont lose my patient_data_new and I have my irregular_patient_data to working with
 irregular_patient_data <- patient_data_new 
-# irregular_patient_data[1,3] <- NA # first row and third col is NA. Domain knowledge ile imputation yapt?? bir lib ile
+# irregular_patient_data[1,3] <- NA # first row and third col is NA. Imputation was performed using a library
 
-# irregular_patient_data <- read.csv("irregular_patient_data2")  hata verdi olu??turmad??????m??zdan dolay??
+# irregular_patient_data <- read.csv("irregular_patient_data2")  // error bcz I didn't create irregular_patient_data2
 
 # categorical variables: nominal, dichotomous, ordinal
 # quantitative variables: ratio scale, interval scale
