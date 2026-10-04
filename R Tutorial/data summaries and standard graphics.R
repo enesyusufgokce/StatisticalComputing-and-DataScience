@@ -28,11 +28,10 @@ with(birthwt, aggregate(birthwt.grams, by = list(race, mother.smokes), FUN = mea
 weight.smoke.tbl <- with(birthwt, table(birthwt.below.2500, mother.smokes))
 weight.smoke.tbl
 
+# # Normalde bir veri setindeki sütuna erişmek için veri$sütun_adı şeklinde bir yazım kullanılır.
+# with() kullandığımızda ise R'a "şu veri setinin içine bak ve içindeki değişkenleri doğrudan kullan" demiş oluruz. 
 
-# Normalde bir veri setindeki s??tuna eri??mek i??in veri$s??tun_ad?? ??eklinde bir yaz??m kullan??l??r.
-# with() kulland??????n??zda ise R'a "??u veri setinin i??ine bak ve i??indeki de??i??kenleri do??rudan kullan" demi?? olursunuz. 
-
-# Her de??i??kenin ba????na 'mtcars$' eklemek gerekir
+# Her değişkenin başına 'mtcars$' eklemek gerekir
 # sonuc <- mtcars$mpg * mtcars$hp
 
 # Veri setini bir kez belirtmek yeterlidir
