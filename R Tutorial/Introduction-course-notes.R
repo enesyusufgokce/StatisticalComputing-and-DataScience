@@ -83,21 +83,21 @@ mutate(infant,
        wt = ifelse(wt == 999, NA, wt), # replace 999 with NA
        wt = wt * 0.4536) # convert ounces to kg 
 
-# Chaining %>% : soldaki sonucu al, sa??daki fonksiyona ver. don't write infant <- blabla in each step
+# Chaining %>% : soldaki sonucu al, sağdaki fonksiyona ver. don't write infant <- blabla in each step
 infant <- infant %>%
   filter(smoke != 9 & age > 18) %>%
   select(-(id:outcome), -sex) %>%
   mutate(wt = ifelse(wt == 999, NA, wt),
          wt = wt * 0.4536)
-# Bir ??nceki sat??r??n ??retti??i sonu??, bir sonraki fonksiyonun i??ine "hangi data frame ??zerinde
-# ??al????ay??m?" sorusunun cevab?? olarak giriyor. Bu y??zden filter, select, mutate i??inde infant
-# yazmam??za gerek kalm??yor
+# Bir önceki satırın ürettiği sonuç, bir sonraki fonksiyonun içine "hangi data frame üzerinde
+# çalışayım?" sorusunun cevabı olarak giriyor. Bu yüzden filter, select, mutate içinde infant
+# yazmamıza gerek kalmıyor
 
 # summarise()
 stats <- summarise(infant, mean_wt = mean(wt, na.rm = TRUE),
                    n = n()) # number of rows
-# na.rm = TRUE, hesaplamadan ??nce eksik NA de??erleri atlar. Yazmazsak i??inde bilinmeyen de??er var,
-# sonucu da bilemem der ve ortalama "NA" ????kar
+# na.rm = TRUE, hesaplamadan önce eksik NA değerleri atlar. Yazmazsak içinde bilinmeyen değer var,
+# sonucu da bilemem der ve ortalama "NA" çıkar
 stats
 
 
@@ -139,7 +139,7 @@ p <- ggplot(infant_cleaned, aes(y=wt*28.35, x=gestation, color=smoke)) +
   geom_point() + labs(x="Gestation", y="Birth Weight(g)", color="Smoking status") 
 p
 # infant: the data frame ggplot takes the columns (gestation, bwt, smoke) from
-# color=smoke: her sigara durumu ayr?? renk
+# color=smoke: each smoking status gets a different color
 # in the smoke column, replaces the old values on the left with the new labels on the
 # right (e.g. 1 becomes "currently")
 
